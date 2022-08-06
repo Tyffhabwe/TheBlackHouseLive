@@ -3,7 +3,7 @@ asgiref==3.3.2
 astroid==2.6.2
 asttokens==2.0.5
 backports.entry-points-selectable==1.1.0
-backports.zoneinfo==0.2.1
+backports.zoneinfo;python_version<"3.9"
 black==21.7b0
 certifi==2021.10.8
 cfgv==3.3.0
