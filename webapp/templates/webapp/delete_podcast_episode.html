@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Homepage</title>
+</head>
+<body>
+	<div class="form group">
+		<form method="POST">
+			{% csrf_token %}
+			<p>Are you sure you want to delete "{{ object }}"?</p>
+			<input type="submit" value="Confirm">
+		</form>
+	</div><!-- end form grou -->
+</body>
+</html>

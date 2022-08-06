@@ -1,0 +1,109 @@
+/* Core CSS for navbar and footer */
+html {
+	scroll-behavior: smooth;
+}
+@media (min-width: 992px){
+	.my-footer{
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: #761d0a;
+	}
+}
+
+@media (max-width: 992px){
+	.my-footer{
+		bottom: 0;
+		width: 100%;
+		height: 200vh;
+		background-color: #761d0a;
+	}
+}
+.social-icon{
+	color: white;
+	padding: 5px;
+}
+.container-fluid{
+	font-family: Helvetica;
+}
+.navbar{
+    padding-top: 0px;
+    padding-left: 12px;
+    padding-bottom: 0px;
+}
+.navbar-custom{
+	background-color: #761d0a;
+	padding
+}
+.nav-link{
+	color: white !important;	
+	font-size: 40px;
+	font-family: 'Bebas Neue', cursive;
+	padding-left: 100px;
+}
+@media (min-width: 992px){
+    .navbar li {
+        margin-left : 1.5em;
+        margin-right : 1.5em;
+    }
+}
+
+a:hover{
+	color: red !important;	
+}
+.big-text{
+	font-size: 50px;
+	color: white; 
+}
+.line{
+	border-color: white;
+}
+.less-big-text{
+	font-size: 45px;
+	color: white;
+}
+
+/*Homepage stuff */
+.homepage-video-text-wrapper{
+	background-color: grey;
+	padding-top: 3px;
+}
+.home-video{
+	padding-left: 0px;
+}
+.homepage-top-text{
+	line-height: 1.5em;
+}
+.homepage-video-text-wrapper{
+	padding-top: 0.8em;
+	margin-right: 1.5em;
+	/*height: 19.68em;*/
+}
+.homepage-iframe-link{
+	margin-right: 0px;
+}
+.homepage-video-text{
+	font-size: 1.05em;
+}
+/* What we do stuff */
+
+/* Meet team stuff */
+.meet-team-image{
+	/*
+	height: 10px !important;
+	width: 200px !important;
+	padding-left: 13em;
+	*/
+}
+
+/* On Air page stuff */
+@media (min-width: 992px){
+	.episode-card{
+		width: 35.05em;
+		/*height: 55em;*/
+	}
+	.episode-row{
+		margin-left: 5em;
+	}
+}
+

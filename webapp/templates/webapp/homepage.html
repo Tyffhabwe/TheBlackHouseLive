@@ -1,0 +1,30 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+	<div class="container-fluid">
+		<center>
+			<br>
+			<h1>{{ page_content.home.title}}</h1>
+			<br>
+			<h2 class="homepage-top-text">{{ page_content.home.top_text }}</h2>	
+		</center>
+
+		<br>
+		
+		<div class="row home-video">
+			<div class="col-md homepage-iframe-link">
+		{{ page_content.latest_episode.video_link|safe }}
+			</div><!-- end col-md-6 -->
+			<div class="col-md-7 homepage-video-text-wrapper">
+				<h3><strong>{{page_content.latest_episode.video_title}}</strong></h3><br>
+				<p class="homepage-video-text">{{page_content.latest_episode.video_text}}</p>
+			</div>
+		</div><!-- end row -->
+	</div><!-- end container -->
+	<br>
+{% endblock %}
+
+{% block edit_page %}
+	<a class="btn btn-outline-primary" href="{% url 'update_homepage' page_content.home.pk %}" role="button">Edit Page</a>
+{% endblock %}

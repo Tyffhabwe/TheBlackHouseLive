@@ -1,0 +1,45 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+	<br>
+	{% for episode in episodes %}
+
+		{% if forloop.first %}<div class="row episode-row">{% endif %}
+			<div class="col-md-6">
+            	<div class="card border-secondary mb-3 episode-card">
+            		<div class="card-vid">
+				  {{ episode.video_link|safe }}
+				  	</div>
+				  <div class="card-body">
+				    <h5 class="card-title">{{ episode.video_title }}</h5>
+				    <p class="card-text">{{ episode.video_text }}</p>
+				    {% if user.is_authenticated %}
+					    <a href="{% url 'update_podcast_episode' episode.pk %}" class="btn btn-outline-secondary" role="button">Edit Episode</a>
+						<a href="{% url 'delete_podcast_episode' episode.pk %}" class="btn btn-outline-secondary" role="button">Delete Episode</a>
+					{% endif %}
+					
+				  </div>
+				</div>
+        	</div>
+        {% if forloop.counter|divisibleby:2 %}</div><br><div class="row episode-row">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+        <!--
+		<h1>{{ episode.video_title }}</h1>
+			{{ episode.video_link|safe }}
+		<p>{{ episode.video_text }}</p>
+		<p>{{ episode.upload_date }}</p>
+
+		{% if user.is_authenticated %}
+			<a href="{% url 'update_podcast_episode' episode.pk %}">Edit Episode</a>
+			<a href="{% url 'delete_podcast_episode' episode.pk %}">Delete Episode</a>
+		{% endif %}-->
+
+	{% endfor %}
+</div>
+	
+{% endblock %}
+
+{% block edit_page %}
+  <a class="btn btn-outline-primary" href="{% url 'create_podcast_episode' %}" role="button">Add Episode</a>
+{% endblock %}

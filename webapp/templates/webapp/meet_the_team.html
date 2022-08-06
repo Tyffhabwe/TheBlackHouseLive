@@ -1,0 +1,29 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<br>
+	<h2>Let's introduce the team:</h2>
+{% for member in members %}
+	<br>
+	<div class="row">
+		<div class="col-md-6">
+			<p><strong>{{ member.member_name}}:</strong>
+			{{ member.writeup }}</p>
+		</div>
+
+		<div class="col-md-6 meet-team-image">
+			<img src="{{ member.photo.url }}" class="img-thumbnail img-fluid img-responsive">
+		</div>
+	</div><!-- end row -->
+
+		{% if user.is_authenticated %}
+		<a class="btn btn-outline-primary" href="{% url 'update_meettheteam' member.pk %}" role="button">Edit Post</a>
+		{% endif %}
+	<br>
+
+{% endfor %}
+</div><!-- end container -->
+<br>
+{% endblock %}

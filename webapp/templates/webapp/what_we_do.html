@@ -1,0 +1,28 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+	<h2>{{ page_content.title }}</h1>
+	<div class="row" style="font-size: 1.65em;">
+		<div class="col-md video-text">
+			<div class="card bg-secondary text-white what-we-do-card">
+				<div class="card-body">
+					<p>{{ page_content.right_paragraph }}</p>
+				</div>
+			</div><!-- end card -->
+		</div>
+		<div class="col-md video-text">
+			<div class="card bg-secondary text-white what-we-do-card">
+				<div class="card-body">
+					<p>{{ page_content.left_paragraph }}</p>
+				</div>
+			</div><!-- end card -->
+		</div><!-- end col -->
+	</div><!-- end row -->
+</div><!-- end container-fluid -->
+<br>
+{% endblock %}
+
+{% block edit_page %}
+  <a class="btn btn-outline-primary" href="{% url 'update_whatwedo' page_content.pk %}" role="button">Edit Page</a>
+{% endblock %}
